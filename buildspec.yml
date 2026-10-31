@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.12
+    commands:
+      - pip install --quiet "sagemaker<3" scikit-learn pandas joblib pytest
+
+  pre_build:
+    commands:
+      - echo "Running ML tests..."
+      - cd pipeline && python -m pytest -q tests
+
+  build:
+    commands:
+      - echo "Tests passed. Updating and starting SageMaker pipeline..."
+      - export SAGEMAKER_SUPPRESS_V2_WARNING=1
+      - python pipeline.py
