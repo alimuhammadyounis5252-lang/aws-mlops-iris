@@ -1,0 +1,4 @@
+{"source": ["aws.s3"],
+ "detail-type": ["Object Created"],
+ "detail": {"bucket": {"name": ["ali886-mlops-data-2026"]},
+            "object": {"key": [{"prefix": "data/incoming/"}]}}}

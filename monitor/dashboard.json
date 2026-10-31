@@ -1,0 +1,14 @@
+{"widgets": [
+ {"type":"metric","x":0,"y":0,"width":12,"height":6,
+  "properties":{"title":"Data Drift (PSI) per feature","region":"ap-southeast-2","stat":"Maximum","period":300,
+   "metrics":[["MLOps/Iris","PSI","Feature","petal length (cm)"],["...","petal width (cm)"],["...","sepal length (cm)"],["...","sepal width (cm)"]],
+   "annotations":{"horizontal":[{"label":"Drift threshold","value":0.25}]}}},
+ {"type":"metric","x":12,"y":0,"width":12,"height":6,
+  "properties":{"title":"Pipeline runs","region":"ap-southeast-2","stat":"Sum","period":3600,
+   "metrics":[["AWS/Sagemaker/ModelBuildingPipeline","ExecutionStarted","PipelineName","iris-pipeline"],["...","ExecutionSucceeded",".","."],["...","ExecutionFailed",".","."]]}},
+ {"type":"metric","x":0,"y":6,"width":12,"height":6,
+  "properties":{"title":"Trigger Lambda","region":"ap-southeast-2","stat":"Sum","period":3600,
+   "metrics":[["AWS/Lambda","Invocations","FunctionName","iris-trigger"],[".","Errors",".","."]]}},
+ {"type":"alarm","x":12,"y":6,"width":12,"height":6,
+  "properties":{"title":"Alarms","alarms":["arn:aws:cloudwatch:ap-southeast-2:818651034411:alarm:iris-petal-length-drift"]}}
+]}

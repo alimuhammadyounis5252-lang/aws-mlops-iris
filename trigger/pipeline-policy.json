@@ -1,0 +1,3 @@
+{"Version": "2012-10-17",
+ "Statement": [{"Effect": "Allow", "Action": "sagemaker:StartPipelineExecution",
+                "Resource": "arn:aws:sagemaker:ap-southeast-2:818651034411:pipeline/iris-pipeline"}]}
